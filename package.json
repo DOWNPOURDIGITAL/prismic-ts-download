@@ -1,0 +1,49 @@
+{
+	"name": "@downpourdigital/prismic-ts-downloader",
+	"version": "0.0.0",
+	"description": "Fetch content from Prismic via GraphQL as TypeScript files.",
+	"sideEffects": false,
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"repository": "https://github.com/DOWNPOURDIGITAL/prismic-ts-downloader.git",
+	"author": "johh <code@johh.net>",
+	"license": "BSD-4-Clause",
+	"private": false,
+	"scripts": {
+		"build": "rollup -c",
+		"declaration": "tsc --emitDeclarationOnly",
+		"type-check": "tsc --noEmit",
+		"dev": "rollup -c -w"
+	},
+	"keywords": [
+		"prismic",
+		"download",
+		"fetch",
+		"graphql",
+		"typescript",
+		"ts"
+	],
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^2.26.0",
+		"@typescript-eslint/parser": "^2.26.0",
+		"eslint": "^7.0.0",
+		"eslint-config-airbnb-typescript": "^7.2.0",
+		"eslint-import-resolver-typescript": "^2.0.0",
+		"eslint-plugin-import": "^2.20.2",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-react": "^7.19.0",
+		"eslint-plugin-react-hooks": "^4.0.2",
+		"rollup": "^2.3.2",
+		"rollup-plugin-auto-external": "^2.0.0",
+		"rollup-plugin-typescript2": "^0.27.0",
+		"typescript": "^3.8.3"
+	},
+	"dependencies": {
+		"apollo-cache-inmemory": "^1.6.6",
+		"apollo-client": "^2.6.10",
+		"apollo-link-prismic": "^1.0.7",
+		"axios": "^0.19.2",
+		"chalk": "^4.0.0",
+		"ora": "^4.0.4"
+	}
+}

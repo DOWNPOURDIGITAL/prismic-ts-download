@@ -86,6 +86,20 @@ export default class FileManager {
 			);
 		});
 
-		return Promise.all( promises );
+		return Promise.all( promises )
+			.then( () => fs.promises.readdir( path.resolve( this.outDir, 'files/' ) ) )
+			.then( ( allFiles ) => {
+				const neededFiles = Array.from( this.files.values() );
+
+				const deletableFiles = allFiles.filter( s => !neededFiles.includes( s ) );
+
+				return Promise.all(
+					deletableFiles.map(
+						file => fs.promises.unlink(
+							path.resolve( this.outDir, 'files/', file ),
+						),
+					),
+				);
+			});
 	}
 }

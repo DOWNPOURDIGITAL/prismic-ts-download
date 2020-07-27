@@ -6,6 +6,7 @@ import ApiClient from './ApiClient';
 export type TaskFactory = ( utils: {
 	query: ApiClient['query'];
 	asExternal: ApiClient['track'];
+	asComponent: ApiClient['trackComponent'];
 	toFile: ApiClient['write'];
 }) => Promise<unknown>;
 
@@ -48,6 +49,7 @@ export default function run(
 			imports += 1;
 			return client.track( a );
 		},
+		asComponent: ( a ) => client.trackComponent( a ),
 		toFile: ( a, b ) => client.write( a, b ),
 	}) ) );
 

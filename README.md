@@ -36,6 +36,8 @@ Inside this function you have access to several helpers:
 
 `asExternal` flags a given url for download.
 
+`asComponent` flags a given source string as TSX. This will import React into the resulting file and export the string as a React fragment.
+
 `toFile` writes the given output to a file and adds all the necessary imports.
 
 
@@ -48,7 +50,7 @@ run({
 	siteId: 'YOUR-SITE-ID',
 	outDir: path.resolve( __dirname, '../content' ),
 	tasks: [
-		({ query, asExternal, toFile }) => (
+		({ query, asExternal, asComponent, toFile }) => (
 			query({
 				query: gql`
 				{

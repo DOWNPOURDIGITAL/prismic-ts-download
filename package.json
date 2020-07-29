@@ -1,6 +1,6 @@
 {
 	"name": "@downpourdigital/prismic-ts-downloader",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "Fetch content from Prismic via GraphQL as TypeScript files.",
 	"sideEffects": false,
 	"main": "dist/cjs/index.js",

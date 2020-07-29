@@ -68,13 +68,16 @@ export default class FileManager {
 
 		if ( needsReact ) imports.push( "import React from 'react';" );
 
+		const subDirs = name.split( '/' ).length - 1;
+		const fileDir = `${subDirs > 0 ? '../'.repeat( subDirs ) : './'}files/`;
+
 		this.files.forEach( ( outName, inName ) => {
 			const hash = outName.split( '.' )[0];
 			const varName = `file${hash}`;
 			const absName = `"${inName}"`;
 
 			if ( outStr.includes( absName ) ) {
-				imports.push( `import ${varName} from './files/${outName}';` );
+				imports.push( `import ${varName} from '${fileDir}${outName}';` );
 				outStr = outStr.split( absName ).join( varName );
 			}
 		});
